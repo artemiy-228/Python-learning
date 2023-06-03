@@ -37,7 +37,7 @@ Any text between two single or double quotation marks is a string.
 * \n represents a new line
 * \t represents tab
 
-The backslash is also called the escape character
+Hint: The backslash is also called the escape character
 
 ## Accessing Strings
 
@@ -98,7 +98,7 @@ Similar to strings, we can use the in and not in operators to check if an elemen
 ## List Functions
 
 Lists support the following functions:
-* ** append(item)** -  adds an item to the end of the list.
+* **append(item)** -  adds an item to the end of the list.
 * **insert(index, item)** -  adds an item at the given index in the list.
 * **remove(item)** -  removes an item from the list.
 * **pop(index)** -  removes the item at the given index.
@@ -154,3 +154,44 @@ A useful dictionary function is **get()**. It does the same thing as indexing, b
 	print(pairs.get("orange", "yellow")) #input yellow
 	print(pairs.get(12, 42)) #input True
 	print(pairs.get(12345, "not found")) #input not found
+
+# Tuples
+
+Tuples are very similar to lists, except that they are immutable (they cannot be changed).
+Also, they are created using **parentheses**, rather than square brackets.
+	
+	words = ("spam", "eggs", "sausages",)
+	print(words[0])
+
+Hint: Like lists and dictionaries, tuples can be nested within each other
+
+An advantage of tuples over lists is that they can be used as keys for dictionaries (because they are immutable)
+	dict = { ("David", 42): "red",("Bob", 24): "green"}
+	print(dict[("Bob", 24)]) 
+
+Hint: Tuples are faster than lists, but they cannot be changed.
+
+## Tuple Unpacking
+
+**Tuple unpacking** allows you to assign each item in a collection to a variable.
+
+	numbers = (1, 2, 3)
+	a, b, c = numbers
+	print(a)
+	print(b)
+	print(c)
+	
+Hint: This can be also used to swap variables by doing a, b = b, a , since b, a on the right hand side forms the tuple (b, a) which is then unpacked.
+
+
+A variable that is prefaced with an asterisk (*) takes all values from the collection that are left over from the other variables.
+
+	a, b, *c, d = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+	print(a)
+	print(b)
+	print(c)
+	print(d)
+
+Hint: c will get assigned the values 3 to 8.
+
+
