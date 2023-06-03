@@ -61,3 +61,12 @@ Strings can be added together (also called concatenation) and also be multiplied
 	* "abra" + "cadabra" = "abracadabra"
 	* "abra" * 3 = "abraabraabra"
 
+## String Functions
+
+String have many useful functions:
+* count(str) -  returns how many times the str substring appears in the given string.
+* upper() -  converts the string to uppercase.
+* lower() -  converts the string to lowercase.
+* replace(old, new) -  replaces all occurrences of old with new.
+* len(str) -  returns the length of the string (number of characters).
+
