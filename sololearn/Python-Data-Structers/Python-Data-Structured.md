@@ -45,11 +45,11 @@ Strings can be thought of as a sequence of characters. Each character in the str
 
 You can access a character of a string using its index:
 
-	```print(line[0])```
+	print(line[0])
 
 You can also use negative indices, which access the characters of the string counting from the end.
 
-	```print(line[-1])```
+	print(line[-1])
 
 
 ## String Operations
@@ -58,17 +58,17 @@ The in operator can be used to check if a string is part of another string.
 
 Strings can be added together (also called concatenation) and also be multiplied by integers
 
-	* "abra" + "cadabra" = "abracadabra"
-	* "abra" * 3 = "abraabraabra"
+	 "abra" + "cadabra" = "abracadabra"
+	 "abra" * 3 = "abraabraabra"
 
 ## String Functions
 
 String have many useful functions:
-* count(str) -  returns how many times the str substring appears in the given string.
-* upper() -  converts the string to uppercase.
-* lower() -  converts the string to lowercase.
-* replace(old, new) -  replaces all occurrences of old with new.
-* len(str) -  returns the length of the string (number of characters).
+* **count(str)** -  returns how many times the str substring appears in the given string.
+* **upper()** -  converts the string to uppercase.
+* **lower()** -  converts the string to lowercase.
+* **replace(old, new)** -  replaces all occurrences of old with new.
+* **len(str)** -  returns the length of the string (number of characters).
 
 
 # Lists
@@ -98,16 +98,16 @@ Similar to strings, we can use the in and not in operators to check if an elemen
 ## List Functions
 
 Lists support the following functions:
-* append(item) -  adds an item to the end of the list.
-* insert(index, item) -  adds an item at the given index in the list.
-* remove(item) -  removes an item from the list.
-* pop(index) -  removes the item at the given index.
-* count(item) -  returns a count of how many times an item occurs in the list.
-* reverse() reverses items in the list.
-* sort() sorts the list. By default, the list is sorted ascending.
+* ** append(item)** -  adds an item to the end of the list.
+* **insert(index, item)** -  adds an item at the given index in the list.
+* **remove(item)** -  removes an item from the list.
+* **pop(index)** -  removes the item at the given index.
+* **count(item)** -  returns a count of how many times an item occurs in the list.
+* **reverse()** reverses items in the list.
+* **sort()** sorts the list. By default, the list is sorted ascending.
 * You can specify reverse=True as the parameter, to sort descending.
-* max(list) returns the maximum value.
-* min(list) returns the minimum value.
+* **max(list)** returns the maximum value.
+* **min(list)** returns the minimum value.
 
 
 ## List Comprehensions
@@ -120,5 +120,37 @@ For example, we can do the following:
 	print(cubes)
 
 A list comprehension can also contain an if statement to enforce a condition on values in the list.
-	evens=[i**2 for i in range(10) if i**2 % 2 == 0]
+	evens = [i**2 for i in range(10) if i**2 % 2 == 0]
 	print(evens)
+
+
+# Dictionaries
+
+We saw how lists allow us to store elements with their corresponding indices.
+The indices in a list are automatically set. But what if we need to set our own index?
+
+**Dictionaries** are another collection type and allow us to map arbitrary keys to values.
+**Dictionaries** can be indexed in the same way as lists, using square brackets containing keys.
+
+	ages = {"Dave": 24, "Mary": 42, "John": 58}
+	print(ages["Dave"]) Dave - key, 24 - value
+	print(ages["Mary"]) Mary - key, 42 - value
+
+You can use strings, integers, booleans, and any other immutable type as dictionary keys.
+This means that you cannot use lists or dictionaries as keys
+
+To determine whether a key is in a dictionary, you can use in and not in, just as you can for a list
+
+	nums = {1: "one", 2: "two", 3: "three"}
+	print(1 in nums)
+	print("three" in nums)
+	print(4 not in nums)
+	#this check checks for keys, not values
+
+A useful dictionary function is **get()**. It does the same thing as indexing, but if the key is not found in the dictionary it returns another specified value instead.
+
+	pairs = {1: "apple", "orage": [2, 3, 4],  True: False,  12: "True"}
+
+	print(pairs.get("orange", "yellow")) #input yellow
+	print(pairs.get(12, 42)) #input True
+	print(pairs.get(12345, "not found")) #input not found
