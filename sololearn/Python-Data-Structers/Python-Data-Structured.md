@@ -194,4 +194,44 @@ A variable that is prefaced with an asterisk (*) takes all values from the colle
 
 Hint: c will get assigned the values 3 to 8.
 
+# Sets
+
+**Sets** are collections of unordered items that are unique.
+
+They are created using curly braces, and, due to the way they're stored, it's faster to check whether an item is part of a **set** using the in operator, rather than part of a **list**.
+
+	num_set = {1, 2, 3, 4, 5}
+	print(0 in num_set) #False
+	print(1 in num_set) #True
+
+Hint: **Sets cannot contain duplicate elements**.
+
+## Sets useful functions
+
+You can use the **add()** function to add new items to the set, and **remove()** to delete a specific element
+
+	nums = {1, 2, 1, 3, 1, 4, 5, 6}
+	print(nums)
+	nums.add(-7)
+	nums.remove(3)
+	print(nums)
+
+Hint: Duplicate elements will automatically get removed from the set.
+
+## Sets and bool algebra
+
+Sets can be combined using mathematical operations.
+* The **union** operator **|** combines two sets to form a new one containing items in either.
+* The **intersection** operator **&** gets items only in both.
+* The **difference** operator **-** gets items in the first set but not in the second.
+* The **symmetric** difference operator **^** gets items in either set, but not both.
+
+	first = {1, 2, 3, 4, 5, 6}
+	second = {4, 5, 6, 7, 8, 9}
+
+	print(first | second) #Input - {1, 2, 3, 4, 5, 6, 7, 8, 9}
+	print(first & second) #Input - {4, 5, 6}
+	print(first - second) #Input - {1, 2, 3}
+	print(second - first) #Input - {8, 9, 7}
+	print(first ^ second) #Input - {1, 2, 3, 7, 8, 9}
 
