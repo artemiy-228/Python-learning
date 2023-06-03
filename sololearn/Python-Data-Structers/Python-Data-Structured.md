@@ -24,3 +24,19 @@ The most prominent data structures are:
 * Queues
 * Trees
 * Linked Lists
+
+
+## Strings
+
+Strings are used to store text, and are one of the simplest and most used data structures.
+
+Any text between two single or double quotation marks is a string.
+
+### Special Character
+
+* \n represents a new line
+* \t represents tab
+
+The backslash is also called the escape character
+
+
