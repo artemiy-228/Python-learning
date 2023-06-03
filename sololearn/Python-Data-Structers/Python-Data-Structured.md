@@ -249,12 +249,50 @@ Hint: Duplicate elements will automatically get removed from the **set**.
 As we have seen in the previous paragraphs, Python supports the following collection types: **Lists**, **Dictionaries**, **Tuples**, **Sets**.
 
 Here are some general guidelines for choosing the correct data structure:
-- Use a **dictionary**, when you need a logical association between a **key:value** Используйте **словарь**, когда вам нужна логическая связь между **ключом: значением**
+- Use a **dictionary**, when you need a logical association between a **key:value**
+  Используйте **словарь**, когда вам нужна логическая связь между **ключом: значением**
+
 - Use **lists** if you have a collection of data that does not need random access. Try to choose **lists** when you need a simple, iterable collection that is modified frequently.
   Используйте **списки**, если у вас есть коллекция данных, не требующая произвольного доступа. Старайтесь выбирать **списки**, когда вам нужна простая итерируемая коллекция, которая часто изменяется.
-- Use a **set** if you need uniqueness for the elements.Используйте **Множества**, если вам нужна уникальность элементов.
-- Use **tuples** when your data cannot/should not change. Используйте **кортежи**, когда ваши данные не могут/не должны изменяться.
+
+- Use a **set** if you need uniqueness for the elements.
+  Используйте **Множества**, если вам нужна уникальность элементов.
+
+- Use **tuples** when your data cannot/should not change.
+  Используйте **кортежи**, когда ваши данные не могут/не должны изменяться.
 
 Hint: Many times, a **tuple** is used in combination with a **dictionary**, for example, a **tuple** can represent a **key**, because it's immutable.
+
       Часто **кортеж** используется в сочетании со **словарем**, например, **кортеж** может представлять **ключ**, потому что он неизменяем.
+
+
+<center><h1>User-Defined Data Structures</h1></center>
+
+In the previous modules we have seen the built-in data structures in Python, which include **Lists**, **Dictionaries**, **Tuples** and **Sets**.
+
+Some applications require additional functionality when working with data, for example, word processors have an undo-redo function, task schedulers need queuing mechanisms, maps need to find the shortest path, etc.
+In these cases we need to define our own data structures that provide the required functionality.
+
+Some of the most popular data structures are:
+- Stacks
+- Queues
+- Linked Lists
+- Graphs
+
+Hint: We will implement the above data structures and use them to solve popular problems.
+
+# Stack
+
+A stack is a simple data structure that adds and removes elements in a particular order.
+Every time an element is added, it goes on the "top" of the stack. Only an element at the top of the **stack** can be removed, just like a stack of plates. This behavior is called **LIFO** (Last In, First Out).
+
+**Terminology**
+Adding a new element onto the stack is called **push**.
+Removing an element from the stack is called **pop**.
+
+**Applications**
+**Stacks** can be used to create undo-redo functionalities, parsing expressions (infix to postfix/prefix conversion), and much more.
+
+Hint: A stack can be implemented using a list in Python.
+
 
