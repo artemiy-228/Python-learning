@@ -52,3 +52,12 @@ You can also use negative indices, which access the characters of the string cou
 	```print(line[-1])```
 
 
+## String Operations
+
+The in operator can be used to check if a string is part of another string.
+
+Strings can be added together (also called concatenation) and also be multiplied by integers
+
+	* "abra" + "cadabra" = "abracadabra"
+	* "abra" * 3 = "abraabraabra"
+
