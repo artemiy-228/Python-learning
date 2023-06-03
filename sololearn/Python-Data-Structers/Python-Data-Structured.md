@@ -1,5 +1,5 @@
 
-# Python Data Structures
+<center><h1> Python Data Structures</h1></center>
 
 Almost every program uses data.
 Organizing, managing and storing data is important as it enables easier access and efficient modifications.
@@ -243,4 +243,18 @@ Hint: Duplicate elements will automatically get removed from the **set**.
 
 	print(first ^ second)
         #Input - {1, 2, 3, 7, 8, 9}
+
+# Data Structures - Summary ENG/RUS (for repeat)
+
+As we have seen in the previous paragraphs, Python supports the following collection types: **Lists**, **Dictionaries**, **Tuples**, **Sets**.
+
+Here are some general guidelines for choosing the correct data structure:
+- Use a **dictionary**, when you need a logical association between a **key:value** Используйте **словарь**, когда вам нужна логическая связь между **ключом: значением**
+- Use **lists** if you have a collection of data that does not need random access. Try to choose **lists** when you need a simple, iterable collection that is modified frequently.
+  Используйте **списки**, если у вас есть коллекция данных, не требующая произвольного доступа. Старайтесь выбирать **списки**, когда вам нужна простая итерируемая коллекция, которая часто изменяется.
+- Use a **set** if you need uniqueness for the elements.Используйте **Множества**, если вам нужна уникальность элементов.
+- Use **tuples** when your data cannot/should not change. Используйте **кортежи**, когда ваши данные не могут/не должны изменяться.
+
+Hint: Many times, a **tuple** is used in combination with a **dictionary**, for example, a **tuple** can represent a **key**, because it's immutable.
+      Часто **кортеж** используется в сочетании со **словарем**, например, **кортеж** может представлять **ключ**, потому что он неизменяем.
 
