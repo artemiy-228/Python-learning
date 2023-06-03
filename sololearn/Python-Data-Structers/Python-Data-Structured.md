@@ -39,4 +39,16 @@ Any text between two single or double quotation marks is a string.
 
 The backslash is also called the escape character
 
+## Accessing Strings
+
+Strings can be thought of as a sequence of characters. Each character in the string has its unique position (or index).
+
+You can access a character of a string using its index:
+
+	```print(line[0])```
+
+You can also use negative indices, which access the characters of the string counting from the end.
+
+	```print(line[-1])```
+
 
