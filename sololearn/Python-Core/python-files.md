@@ -37,10 +37,10 @@
 	file.close()
 
 ## Reading Files - read atributes
-	To read only a certain amount of a file, you can provide a number as an argument to the read function.
- 	This determines the number of bytes that should be read.
-	You can make more calls to read on the same file object to read more of the file byte by byte.
- 	With no argument, read returns the rest of the file.
+To read only a certain amount of a file, you can provide a number as an argument to the read function.
+This determines the number of bytes that should be read.
+You can make more calls to read on the same file object to read more of the file byte by byte.
+With no argument, read returns the rest of the file.
 
 	file = open("filename.txt")
 	print(file.read(16))
@@ -50,15 +50,44 @@
 
 ## Reading Files - empty string
 
-	After all contents in a file have been read,
- 	any attempts to read further from that file will return an empty string,
- 	because you are trying to read from the end of the file.
+After all contents in a file have been read,
+any attempts to read further from that file will return an empty string,
+because you are trying to read from the end of the file.
 
 
 ## Reading Files - read line
 	
-	To retrieve each line in a file, you can use the readlines method
-	 to return a list in which each element is a line in the file.
+To retrieve each line in a file, you can use the readlines method
+to return a list in which each element is a line in the file.
 
 	 file = open("filename.txt")
 	page = file.readlines() - page is list
+
+## Writing Files
+
+To **write** to files you use the **write** method, which writes a string to the file.
+
+	file = open("newfile.txt", "w")
+	file.write("This has been written to a file")
+	file.close()
+
+	file = open("newfile.txt", "r")
+	print(file.read())
+	file.close()
+
+Hint: The **"w"** mode will create a file, if it does not already exist.
+
+When a file is opened in write mode, the file's existing content is deleted.
+
+	file = open("newfile.txt", "w")
+	file.write("Some new text")
+	file.close()
+
+	file = open("newfile.txt", "r")
+	print("Reading new contents")
+	print(file.read())
+	print("Finished")
+	file.close()
+
+Hint: As you can see, the content of the file has been overwritten.
+
