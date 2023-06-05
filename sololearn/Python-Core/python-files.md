@@ -91,3 +91,15 @@ When a file is opened in write mode, the file's existing content is deleted.
 
 Hint: As you can see, the content of the file has been overwritten.
 
+The **write** method returns the number of bytes written to a file, if successful.
+
+	msg = "Hello world!"
+	file = open("newfile.txt", "w")
+	amount_written = file.write(msg)
+	print(amount_written)
+	file.close()
+	# "Hello world!" is 12 bytes
+
+Hint: To write something other than a string, it needs to be converted to a string first.
+
+
