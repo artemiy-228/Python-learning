@@ -1,4 +1,4 @@
-<center><h1>Functional Programming</h1></center>
+<h1 style="text-aligh: center">Functional Programming</h1>
 
 **Functional programming** is a style of programming that (as the name suggests) is based around **functions**.
 A key part of **functional programming** is higher-order **functions**. We have seen this idea briefly in the previous lesson on **functions** as objects.
@@ -22,7 +22,7 @@ Higher-order **functions** take other **functions** as arguments, or return them
 Hint: The function **apply_twice()** takes another function as its argument, and calls it twice inside its body.
 
 
-<center><h1>Pure Functions</h1></center>
+<h1 style="text-aligh: center">Pure Functions</h1>
 
 **Functional programming** seeks to use **pure functions**. **Pure functions** have no side effects, and return a value that depends only on their arguments.
 This is how **functions** in math work: for example, The **cos(x)** will, for the same value of x, always return the same result.
@@ -50,7 +50,7 @@ Hint:
 The function above is not pure, because it changed the state of **some_list()**.
 
 
-<center><h1>Pure Functions +/-</h1></center>
+<h1 style="text-aligh: center"><h1>Pure Functions +/-</h1>
 
 Using pure functions has both advantages and disadvantages.
 
