@@ -286,13 +286,72 @@ Hint: We will implement the above data structures and use them to solve popular 
 A stack is a simple data structure that adds and removes elements in a particular order.
 Every time an element is added, it goes on the "top" of the stack. Only an element at the top of the **stack** can be removed, just like a stack of plates. This behavior is called **LIFO** (Last In, First Out).
 
+Стек — это простая структура данных, которая добавляет и удаляет элементы в определенном порядке.
+Каждый раз, когда добавляется элемент, он помещается на «верх» стека. Только элемент в верхней части **стека** может быть удален, как стопка тарелок. Такое поведение называется **LIFO** (последним пришел, первым ушел).
+
 **Terminology**
 Adding a new element onto the stack is called **push**.
 Removing an element from the stack is called **pop**.
 
+**Терминология**
+Добавление нового элемента в стек называется **push**.
+Удаление элемента из стека называется **pop**.
+
 **Applications**
 **Stacks** can be used to create undo-redo functionalities, parsing expressions (infix to postfix/prefix conversion), and much more.
 
+**Приложения**
+**Стеки** можно использовать для создания функций отмены и повтора, синтаксического анализа выражений (преобразование инфикса в постфикс/префикс) и многого другого.
+
 Hint: A stack can be implemented using a list in Python.
+
+# Stack in Python
+
+Let's define and implement the Stack class with its corresponding **push, pop, is_empty** and **print_stack** methods.
+We will use a **list** to store the data.
+
+Давайте определим и реализуем класс Stack с соответствующими методами **push, pop, is_empty** и **print_stack**.
+Мы будем использовать **список** для хранения данных.
+
+**Example:**
+
+	class Stack:
+            def __init__(self):
+                self.items = []  
+  
+            def is_empty(self):
+                return self.items == []
+  
+            def push(self, item):
+                self.items.insert(0, item)
+    
+            def pop(self):
+                return self.items.pop(0)
+    
+    	    def print_stack(self):
+                print(self.items)
+    
+	s = Stack()
+	s.push('a')
+	s.push('b')
+	s.push('c')
+	s.print_stack()
+
+	s.pop()
+	s.print_stack()
+
+	# Output ['c', 'b', 'a']
+	# Output ['b', 'a']
+
+
+> Hint: It's not nessesary to use class. You can work with stack just with lists functions pop and insert.Hint: It's not necessary to use class. You can work with stack just with lists functions pop and insert.
+
+As you can see, it's easy to create a stack using a list.
+We use a list called **items** to store our elements.
+The **push** method adds an element at the beginning of the list, while the **pop** method removes the first element of the list.
+
+Как видите, стек легко создать с помощью списка.
+Мы используем список под названием **items** для хранения наших элементов.
+Метод **push** добавляет элемент в начало списка, а метод **pop** удаляет первый элемент списка.
 
 
