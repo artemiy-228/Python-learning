@@ -355,3 +355,65 @@ The **push** method adds an element at the beginning of the list, while the **po
 Метод **push** добавляет элемент в начало списка, а метод **pop** удаляет первый элемент списка.
 
 
+# Queue
+
+A **queue** is similar to a stack, but defines a different way to add and remove elements.
+The elements are inserted from one end, called the **rear**, and deleted from the other end, called the **front**.
+This behavior is called **FIFO** (First in First Out).
+
+**Очередь** похожа на стек, но определяет другой способ добавления и удаления элементов.
+Элементы вставляются с одного конца, называемого **задним**, и удаляются с другого конца, называемого **передним**.
+Такое поведение называется **FIFO** (First in First Out).
+
+**Terminology**
+The process of adding new elements into the **queue** is called **enqueue**.
+The process of removal of an element from the **queue** is called **dequeue**.
+
+**Терминология**
+Процесс добавления новых элементов в **очередь** называется **ставкой в ​​очередь**.
+Процесс удаления элемента из **очереди** называется **удалением из очереди**.
+
+**Applications**
+**Queues** are used whenever we need to manage objects in order starting with the first one in.
+Scenarios include printing documents on a printer, call center systems answering people on hold, and so on.
+
+**Приложения**
+**Очереди** используются всякий раз, когда нам нужно управлять объектами по порядку, начиная с первого входящего.
+Сценарии включают печать документов на принтере, системы колл-центров, отвечающие на звонки и т. д.
+
+> Hint: Python lists are the easiest way to implement a queue functionality.
+
+# Implement Queue with class
+
+Let's implement the Queue class with it's corresponding enqueue, dequeue, is_empty and print methods.
+We will use a list to store the elements.
+
+Давайте реализуем класс Queue с соответствующими методами enqueue, dequeue, is_empty и print.
+Мы будем использовать список для хранения элементов.
+
+	class Queue:
+    	    def __init__(self):
+        	self.items = []
+
+    	    def is_empty(self):
+        	return self.items == []
+
+    	    def enqueue(self, item):
+        	self.items.insert(0, item)
+
+    	    def dequeue(self):
+        	return self.items.pop()
+
+    	    def print_queue(self):
+        	print(self.items)
+
+	q = Queue()
+	q.enqueue('a')
+	q.enqueue('b')
+	q.enqueue('42')
+	q.print_queue()
+	q.dequeue()
+	q.print_queue()
+
+>Hint: The **enqueue** method adds an element at the beginning of the list, while the **dequeue** method removes the last element.
+
