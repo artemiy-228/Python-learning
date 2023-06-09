@@ -133,6 +133,8 @@ These statistics provide information about your data set and help you understand
 
 > Подсказка: Python предоставляет библиотеки, которые вычисляют для вас сводную статистику. О них мы узнаем на следующих уроках.
 
+***
+
 # Math Operations with NumPy / Математические операции с NumPy
 
 ## What is NumPy / Что такое NumPy
@@ -182,3 +184,119 @@ We can access its elements using their indexes, which start from 0:
 > Hint: NumPy arrays are homogeneous, meaning they can contain only a single data type, while lists can contain multiple different types of data.
 
 > Подсказка. Массивы NumPy однородны, то есть могут содержать данные только одного типа, тогда как списки могут содержать несколько разных типов данных.
+
+*** 
+
+## Using NumPy arrays/ Использование NumPy массивов
+
+### NumPy Arrays/ NumPy массивы
+
+NumPy arrays are often called ndarrays, which stands for "N-dimensional array", because they can have multiple dimensions.
+
+#### #### For example:
+
+Массивы NumPy часто называют ndarrays, что означает «N-мерный массив», поскольку они могут иметь несколько измерений.
+
+#### #### Например:
+
+	x = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+	print(x[1][2])
+
+This will create a 2-dimensional array, which has 3 columns and 3 rows, and output the value at the 2nd row and 3rd column.
+
+Это создаст двумерный массив, который имеет 3 столбца и 3 строки, и выведет значение во 2-й строке и 3-м столбце.
+
+Arrays have properties, which can be accessed using a dot.
+ndim returns the number of dimensions of the array.
+size returns the total number of elements of the array.
+shape returns a tuple of integers that indicate the number of elements stored along each dimension of the array.
+
+#### For example:
+
+Массивы имеют свойства, доступ к которым можно получить с помощью точки.
+ndim возвращает количество измерений массива.
+size возвращает общее количество элементов массива.
+shape возвращает кортеж целых чисел, указывающих количество элементов, хранящихся в каждом измерении массива.
+
+#### Например:
+
+	x = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) 
+	print(x.ndim) # 2
+	print(x.size) # 9
+	print(x.shape) # (3, 3)
+
+> Hint: So, the array in our example has 2 dimensions, 9 elements and is a 3x3 matrix (3 rows and 3 columns).
+
+> Подсказка: Итак, массив в нашем примере имеет 2 измерения, 9 элементов и представляет собой матрицу 3x3 (3 строки и 3 столбца).
+
+
+### NumPy Arrays/ NumPy массивы
+
+We can add, remove and sort an array using the np.append(), np.delete() and np.sort() functions.
+
+#### For example:
+
+Мы можем добавлять, удалять и сортировать массив с помощью функций np.append(), np.delete() и np.sort().
+
+#### Например:
+
+	import numpy as np
+
+	x = np.array([2, 1, 3])
+	x = np.append(x, 4)
+	x = np.sort(x)
+
+	print(x) # Output is [1, 3, 4]
+
+np.arange() allows you to create an array that contains a range of evenly spaced intervals (similar to a Python range):
+
+np.arange() позволяет создать массив, содержащий диапазон равномерно расположенных интервалов (аналогично диапазону Python):
+
+	import numpy as np
+
+	x = np.arange(2, 10, 3)
+	print(x) #x is [2, 5, 8]
+
+## Changing the Shape / Изменение формы
+
+### Reshape / Изменение
+
+Recall that shape refers to the number of rows and columns in the array.
+For example, let's consider the following array:
+
+Напомним, что shape относится к количеству строк и столбцов в массиве.
+Например, рассмотрим следующий массив:
+
+	x = np.arange(1, 7)
+
+This is a 1-dimensional array, containing 6 elements.
+
+NumPy allows us to change the shape of our arrays using the reshape() function. For example, we can change our 1-dimensional array to an array with 3 rows and 2 columns:
+
+
+Это одномерный массив, содержащий 6 элементов.
+
+NumPy позволяет нам изменять форму наших массивов с помощью функции reshape(). Например, мы можем изменить наш одномерный массив на массив с 3 строками и 2 столбцами:
+
+	z = x.reshape(3, 2)
+
+>Hint: When you use the reshape method, the array you want to produce needs to have the same number of elements as the original array.
+
+>Подсказка: когда вы используете метод изменения формы, массив, который вы хотите создать, должен иметь то же количество элементов, что и исходный массив.
+
+### Reshape
+
+Reshape can also do the opposite: take a 2-dimensional array and make a 1-dimensional array from it:
+
+Reshape также может сделать обратное: взять 2-мерный массив и сделать из него 1-мерный массив:
+
+	x = np.array([[1, 2], [3, 4], [5, 6]])
+	z = x.reshape(6)
+
+The result is a flat array that contains 6 elements.
+
+В результате получается плоский массив, содержащий 6 элементов.
+
+> Hint: The same result can be achieved using the flatten() function.
+> Подсказка: Того же результата можно добиться с помощью функции flatten().
+
