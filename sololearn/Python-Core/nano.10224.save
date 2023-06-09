@@ -1,0 +1,34 @@
+
+# None
+
+The **None** object is used to represent the absence of a value.
+It is similar to **null** in other programming languages.
+Like other "empty" values, such as 0, [] and the empty string, it is False when converted to a Boolean variable.
+When entered at the Python console, it is displayed as the empty string.
+
+	print(None)
+
+## What is none?
+
+The None object is returned by any function that doesn't explicitly return anything else.
+
+	def some_func():
+   	     print("Hi!")
+
+	var = some_func()
+	print(var)
+	# Output is Hi! and None
+
+# String Formating
+
+So far, to combine strings and non-strings, you've converted the non-strings to strings and added them.
+**String formatting** provides a more powerful way to embed non-strings within **strings**.
+**String formatting** uses a **string's** format method to substitute a number of arguments in the **string**.
+	# string formatting
+	nums = [4, 5, 6]
+	msg = "Numbers: {0} {1} {2}". format(nums[0], nums[1], nums[2])
+	print(msg)
+
+Hint: Each argument of the format function is placed in the string at the corresponding position, which is determined using the curly braces { }.
+
+**String formatting** can also be done with name
