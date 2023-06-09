@@ -521,3 +521,85 @@ The **add_at_end()** method iterates to the end of the list using a while loop a
 Метод **add_at_front()** добавляет новый узел в начало списка и связывает с ним предыдущий узел.
 Метод **add_at_end()** выполняет итерацию до конца списка, используя цикл while, и добавляет новый узел в качестве ссылки на последний узел.
 
+*** 
+
+<center><h1>Graphs</h1></center>
+
+**Graphs** are used to represent many real-life applications like networks, transportation paths of a city, and social network connections.
+A **graph** is a set of connected nodes where each node is called a Vertex and the connection between two of them is called an Edge.
+
+**Графы** используются для представления многих реальных приложений, таких как сети, транспортные пути города и связи в социальных сетях.
+**Граф** — это набор соединенных узлов, где каждый узел называется вершиной, а соединение между двумя из них называется ребром.
+
+![Examples of graphs](https://cdn-user84060.skyeng.ru/uploads/5fdb2950e8d4b552269906.png)
+
+This can represent, for example, connections on a social network, where each Vertex represents a person and the Edges represent connections.
+
+Это может представлять, например, связи в социальной сети, где каждая вершина представляет человека, а ребра представляют связи.
+
+
+## Graph in Python
+
+A graph can be represented using a square matrix, where each element represents the edges: 0 indicates no edge, while 1 indicates an edge. The rows and columns represent the vertices.
+
+Граф можно представить с помощью квадратной матрицы, где каждый элемент представляет ребра: 0 указывает на отсутствие ребра, а 1 указывает на ребро. Строки и столбцы представляют вершины.
+
+#### Example
+	0 1 1
+	1 0 0
+	1 0 0 
+
+The matrix above represents a graph with 3 vertices (that's why it's a 3x3 matrix).
+The 1s represent the edges. There are 2 edges: the 1st vertex is connected with the 2nd and 3rd.
+There are four 1s in the matrix, because if A is connected with B, then B is connected to A.
+
+Приведенная выше матрица представляет собой граф с 3 вершинами (поэтому это матрица 3x3).
+1 представляют ребра. Есть 2 ребра: 1-я вершина соединена со 2-й и 3-й.
+В матрице четыре единицы, потому что если A соединено с B, то B соединено с A.
+
+> Hint : This type of matrix is called an **adjacency matrix**, because it shows if the corresponding vertices are adjacent or not.
+
+## Implement Graphs class
+
+	class Graph(): 
+        def __init__(self, size): 
+            self.adj = [ [0] * size for i in range(size)]
+            self.size = size 
+    
+        def add_edge(self, orig, dest): 
+            if orig > self.size or dest > self.size or orig < 0 or dest < 0: 
+                print("Invalid Edge") 
+            else: 
+                self.adj[orig-1][dest-1] = 1 
+                self.adj[dest-1][orig-1] = 1 
+        
+        def remove_edge(self, orig, dest): 
+            if orig > self.size or dest > self.size or orig < 0 or dest < 0: 
+                print("Invalid Edge") 
+            else: 
+                self.adj[orig-1][dest-1] = 0 
+                self.adj[dest-1][orig-1] = 0 
+            
+        def display(self): 
+            for row in self.adj: 
+                print() 
+                for val in row: 
+                    print('{:4}'.format(val),end="") 
+
+	#a sample Graph 
+	G = Graph(4) 
+	G.add_edge(1, 3) 
+	G.add_edge(3, 4)
+	G.add_edge(2, 4)
+	G.display()
+
+We store the matrix in a two-dimensional list, called adj.
+The **__init__** method creates the adj matrix with the given size (number of vertices) and initializes all values to zeros.
+The **add_edge()** method is used to add an edge by setting the corresponding values to 1.
+Similarly, the **remove_edge()** method sets the values to 0.
+
+Мы храним матрицу в двумерном списке, называемом adj.
+Метод **__init__** создает матрицу adj заданного размера (количество вершин) и инициализирует все значения нулями.
+Метод **add_edge()** используется для добавления ребра путем установки соответствующих значений в 1.
+Точно так же метод **remove_edge()** устанавливает значения равными 0.
+
