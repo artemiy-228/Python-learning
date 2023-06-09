@@ -1,6 +1,7 @@
 
 <center><h1> Python Data Structures</h1></center>
 
+
 Almost every program uses data.
 Organizing, managing and storing data is important as it enables easier access and efficient modifications.
 
@@ -25,8 +26,9 @@ The most prominent data structures are:
 * **Trees**
 * **Linked Lists**
 
+***
 
-# Strings
+<center><h1>Strings</h1></center>
 
 **Strings** are used to store text, and are one of the simplest and most used data structures.
 
@@ -37,7 +39,7 @@ Any text between two single or double quotation marks is a **string**.
 * **\n** represents a new line
 * **\t** represents tab
 
-Hint: The backslash is also called the escape character
+> Hint: The backslash is also called the escape character
 
 ## Accessing Strings
 
@@ -70,8 +72,9 @@ The in operator can be used to check if a string is part of another **string**.
 * **replace(old, new)** -  replaces all occurrences of old with new.
 * **len(str)** -  returns the length of the **string** (number of characters).
 
+***
 
-# Lists
+<center><h1>Lists</h1></center>
 
 
 **Lists** are used to store multiple elements, each corresponding to an index.
@@ -123,8 +126,9 @@ A **list** comprehension can also contain an if statement to enforce a condition
 	evens = [i**2 for i in range(10) if i**2 % 2 == 0]
 	print(evens)
 
+***
 
-# Dictionaries
+<center><h1>Dictionaries</h1></center>
 
 We saw how **lists** allow us to store elements with their corresponding indices.
 The indices in a **list** are automatically set. But what if we need to set our own index?
@@ -155,7 +159,9 @@ A useful **dictionary** function is **get()**. It does the same thing as indexin
 	print(pairs.get(12, 42)) #input True
 	print(pairs.get(12345, "not found")) #input not found
 
-# Tuples
+***
+
+<center><h1>Tuples</h1></center>
 
 **Tuples** are very similar to **lists**, except that they are immutable (they cannot be changed).
 Also, they are created using **parentheses**, rather than square brackets.
@@ -163,13 +169,13 @@ Also, they are created using **parentheses**, rather than square brackets.
 	words = ("spam", "eggs", "sausages",)
 	print(words[0])
 
-Hint: Like **lists** and **dictionaries**, **tuples** can be nested within each other
+> Hint: Like **lists** and **dictionaries**, **tuples** can be nested within each other
 
 An advantage of **tuples** over **lists** is that they can be used as **keys** for **dictionaries** (because they are immutable)
 	dict = { ("David", 42): "red",("Bob", 24): "green"}
 	print(dict[("Bob", 24)]) 
 
-Hint: **Tuples** are faster than **lists**, but they cannot be changed.
+> Hint: **Tuples** are faster than **lists**, but they cannot be changed.
 
 ## Tuple Unpacking
 
@@ -192,9 +198,11 @@ A variable that is prefaced with an asterisk (*) takes all values from the colle
 	print(c)
 	print(d)
 
-Hint: c will get assigned the values 3 to 8.
+> Hint: c will get assigned the values 3 to 8.
 
-# Sets
+***
+
+<center><h1>Sets</h1></center>
 
 **Sets** are collections of unordered items that are unique.
 
@@ -204,7 +212,7 @@ They are created using curly braces, and, due to the way they're stored, it's fa
 	print(0 in num_set) #False
 	print(1 in num_set) #True
 
-Hint: **Sets cannot contain duplicate elements**.
+> Hint: **Sets cannot contain duplicate elements**.
 
 ## Sets useful functions
 
@@ -216,7 +224,7 @@ You can use the **add()** function to add new items to the **set**, and **remove
 	nums.remove(3)
 	print(nums)
 
-Hint: Duplicate elements will automatically get removed from the **set**.
+> Hint: Duplicate elements will automatically get removed from the **set**.
 
 ## Sets and bool algebra
 
@@ -226,25 +234,27 @@ Hint: Duplicate elements will automatically get removed from the **set**.
 * The **difference** operator **-** gets items in the first **set** but not in the second.
 * The **symmetric** difference operator **^** gets items in either **set**, but not both.
 
-	first = {1, 2, 3, 4, 5, 6}
-	second = {4, 5, 6, 7, 8, 9}
+		first = {1, 2, 3, 4, 5, 6}
+		second = {4, 5, 6, 7, 8, 9}
 
-	print(first | second)
+		print(first | second)
         #Input - {1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	print(first & second)
+		print(first & second)
         #Input - {4, 5, 6}
 
-	print(first - second)
+		print(first - second)
         #Input - {1, 2, 3}
 
-	print(second - first)
+		print(second - first)
         #Input - {8, 9, 7}
 
-	print(first ^ second)
+		print(first ^ second)
         #Input - {1, 2, 3, 7, 8, 9}
 
-# Data Structures - Summary ENG/RUS (for repeat)
+***
+
+<center><h1>Data Structures - summary</h1></center>
 
 As we have seen in the previous paragraphs, Python supports the following collection types: **Lists**, **Dictionaries**, **Tuples**, **Sets**.
 
@@ -261,10 +271,11 @@ Here are some general guidelines for choosing the correct data structure:
 - Use **tuples** when your data cannot/should not change.
   Используйте **кортежи**, когда ваши данные не могут/не должны изменяться.
 
-Hint: Many times, a **tuple** is used in combination with a **dictionary**, for example, a **tuple** can represent a **key**, because it's immutable.
+> Hint: Many times, a **tuple** is used in combination with a **dictionary**, for example, a **tuple** can represent a **key**, because it's immutable.
 
-      Часто **кортеж** используется в сочетании со **словарем**, например, **кортеж** может представлять **ключ**, потому что он неизменяем.
+ > Hint: Часто **кортеж** используется в сочетании со **словарем**, например, **кортеж** может представлять **ключ**, потому что он неизменяем.
 
+***
 
 <center><h1>User-Defined Data Structures</h1></center>
 
@@ -279,9 +290,11 @@ Some of the most popular data structures are:
 - Linked Lists
 - Graphs
 
-Hint: We will implement the above data structures and use them to solve popular problems.
+> Hint: We will implement the above data structures and use them to solve popular problems.
 
-# Stack
+***
+
+<center><h1>Stack</h1></center>
 
 A stack is a simple data structure that adds and removes elements in a particular order.
 Every time an element is added, it goes on the "top" of the stack. Only an element at the top of the **stack** can be removed, just like a stack of plates. This behavior is called **LIFO** (Last In, First Out).
@@ -297,15 +310,15 @@ Removing an element from the stack is called **pop**.
 Добавление нового элемента в стек называется **push**.
 Удаление элемента из стека называется **pop**.
 
-**Applications**
+#### Applications
 **Stacks** can be used to create undo-redo functionalities, parsing expressions (infix to postfix/prefix conversion), and much more.
 
-**Приложения**
+#### Приложения
 **Стеки** можно использовать для создания функций отмены и повтора, синтаксического анализа выражений (преобразование инфикса в постфикс/префикс) и многого другого.
 
-Hint: A stack can be implemented using a list in Python.
+> Hint: A stack can be implemented using a list in Python.
 
-# Stack in Python
+## Stack in Python
 
 Let's define and implement the Stack class with its corresponding **push, pop, is_empty** and **print_stack** methods.
 We will use a **list** to store the data.
@@ -325,11 +338,11 @@ We will use a **list** to store the data.
             def push(self, item):
                 self.items.insert(0, item)
     
-            def pop(self):
+           	def pop(self):
                 return self.items.pop(0)
     
-    	    def print_stack(self):
-                print(self.items)
+   	def print_stack(self):
+                 print(self.items)
     
 	s = Stack()
 	s.push('a')
@@ -354,8 +367,9 @@ The **push** method adds an element at the beginning of the list, while the **po
 Мы используем список под названием **items** для хранения наших элементов.
 Метод **push** добавляет элемент в начало списка, а метод **pop** удаляет первый элемент списка.
 
+***
 
-# Queue
+<center><h1>Queue</h1></center>
 
 A **queue** is similar to a stack, but defines a different way to add and remove elements.
 The elements are inserted from one end, called the **rear**, and deleted from the other end, called the **front**.
@@ -373,38 +387,40 @@ The process of removal of an element from the **queue** is called **dequeue**.
 Процесс добавления новых элементов в **очередь** называется **ставкой в ​​очередь**.
 Процесс удаления элемента из **очереди** называется **удалением из очереди**.
 
-**Applications**
+#### Applications
 **Queues** are used whenever we need to manage objects in order starting with the first one in.
 Scenarios include printing documents on a printer, call center systems answering people on hold, and so on.
 
-**Приложения**
+#### Приложения
 **Очереди** используются всякий раз, когда нам нужно управлять объектами по порядку, начиная с первого входящего.
 Сценарии включают печать документов на принтере, системы колл-центров, отвечающие на звонки и т. д.
 
 > Hint: Python lists are the easiest way to implement a queue functionality.
 
-# Implement Queue with class
+***
+
+## Implement Queue with class
 
 Let's implement the Queue class with it's corresponding enqueue, dequeue, is_empty and print methods.
 We will use a list to store the elements.
 
-Давайте реализуем класс Queue с соответствующими методами enqueue, dequeue, is_empty и print.
+Давайте реализуем класс Queue с соответствующими методами **enqueue**, **dequeue, is_empty** и **print**.
 Мы будем использовать список для хранения элементов.
 
 	class Queue:
-    	    def __init__(self):
+        def __init__(self):
         	self.items = []
 
-    	    def is_empty(self):
+   	    def is_empty(self):
         	return self.items == []
 
-    	    def enqueue(self, item):
+        def enqueue(self, item):
         	self.items.insert(0, item)
 
-    	    def dequeue(self):
+        def dequeue(self):
         	return self.items.pop()
 
-    	    def print_queue(self):
+        def print_queue(self):
         	print(self.items)
 
 	q = Queue()
@@ -416,4 +432,92 @@ We will use a list to store the elements.
 	q.print_queue()
 
 >Hint: The **enqueue** method adds an element at the beginning of the list, while the **dequeue** method removes the last element.
+
+***
+
+<center><h1>Linked List</h1></center>
+
+A **linked list** is a sequence of nodes where each node stores its own data and a link to the next node.
+One node links to another forming what can be thought of as a linked chain
+
+**Связанный список** — это последовательность узлов, в которой каждый узел хранит свои данные и ссылку на следующий узел.
+Один узел соединяется с другим, образуя то, что можно рассматривать как связанную цепочку.
+
+The first node is called the **head**, and it's used as the starting point for any iteration through the list. The last node must have its link pointing to **None** to determine the end of the list.
+Unlike stacks and queues, you can insert and remove nodes in any position of the **linked list** (similar to a standard list).
+
+Первый узел называется **head**, и он используется в качестве отправной точки для любой итерации по списку. Последний узел должен иметь ссылку, указывающую на **None**, чтобы определить конец списка.
+В отличие от стеков и очередей, вы можете вставлять и удалять узлы в любом месте **связанного списка** (аналогично стандартному списку).
+
+#### Applications
+Linked lists are useful when your data is linked. For example when you need undo/redo functionality, the nodes can represent the state with links to the previous and next states. Another example would be a playlist of music, where each clip is linked with the next one.
+
+#### Приложения
+Связанные списки полезны, когда ваши данные связаны. Например, когда вам нужна функция отмены/возврата, узлы могут представлять состояние со ссылками на предыдущее и следующее состояния. Другим примером может быть музыкальный плейлист, где каждый клип связан со следующим.
+
+> Hint: Linked lists can also be used to create other data structures, such as **stack, queues** and **graphs**.
+
+## Linked List in Python
+
+Each node will include data and the link to the next node.
+
+Каждый узел будет включать данные и ссылку на следующий узел.
+
+	class Node:
+          def __init__(self, data, next):
+              self.data = data
+              self.next = next 
+Now we can create the **LinkedList** class with the corresponding methods:
+
+	class Node:
+        def __init__(self, data, next):
+            self.data = data
+            self.next = next
+	
+	class LinkedList:
+	
+	    def __init__(self):
+            self.head = None  
+        
+        def add_at_front(self, data):
+            self.head = Node(data, self.head)      
+
+        def add_at_end(self, data):
+            if not self.head:
+                self.head = Node(data, None)
+                return
+            curr = self.head
+            while curr.next:
+                curr = curr.next
+            curr.next = Node(data, None)
+
+        def get_last_node(self):
+            n = self.head
+            while(n.next != None):
+                n = n.next
+            return n.data
+
+        def is_empty(self):
+            return self.head == None
+
+        def print_list(self):
+            n = self.head
+            while n != None:
+                print(n.data, end = " => ")
+                n = n.next
+            print()
+
+    s = LinkedList()
+    s.add_at_front(5)
+    s.add_at_end(8)
+    s.add_at_front(9)
+    
+    s.print_list()
+    print(s.get_last_node())
+
+The **add_at_front()** method adds a new Node as the head of the list and links the previous head to it.
+The **add_at_end()** method iterates to the end of the list using a while loop and adds the new node as the link of the last node.
+
+Метод **add_at_front()** добавляет новый узел в начало списка и связывает с ним предыдущий узел.
+Метод **add_at_end()** выполняет итерацию до конца списка, используя цикл while, и добавляет новый узел в качестве ссылки на последний узел.
 
