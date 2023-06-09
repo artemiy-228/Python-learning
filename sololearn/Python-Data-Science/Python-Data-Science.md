@@ -133,3 +133,52 @@ These statistics provide information about your data set and help you understand
 
 > Подсказка: Python предоставляет библиотеки, которые вычисляют для вас сводную статистику. О них мы узнаем на следующих уроках.
 
+# Math Operations with NumPy / Математические операции с NumPy
+
+## What is NumPy / Что такое NumPy
+
+### NumPy / NumPy
+
+NumPy (Numerical Python) is a Python library used to work with numerical data.
+NumPy includes functions and data structures that can perform a wide variety of mathematical operations.
+
+To start using NumPy, we first need to import it:
+
+NumPy (Numerical Python) — это библиотека Python, используемая для работы с числовыми данными.
+NumPy включает в себя функции и структуры данных, которые могут выполнять широкий спектр математических операций.
+
+Чтобы начать использовать NumPy, нам сначала нужно его импортировать:
+
+	import numpy as np 
+
+> Hint: np is the most common name used to import numpy.
+
+> Подсказка: np — наиболее распространенное имя, используемое для импорта numpy.
+
+### NumPy Array / NumPy Массивы
+
+In Python, lists are used to store data.
+NumPy provides an array structure for performing operations with data.
+NumPy arrays are faster and more compact than lists.
+
+A NumPy array can be created using the np.array() function, providing it a list as the argument:
+
+В Python списки используются для хранения данных.
+NumPy предоставляет структуру массива для выполнения операций с данными.
+Массивы NumPy быстрее и компактнее списков.
+
+Массив NumPy можно создать с помощью функции np.array(), предоставив ей список в качестве аргумента:
+
+	x = np.array([1, 2, 3, 4]) 
+
+Now, x is a NumPy array containing 4 values.
+We can access its elements using their indexes, which start from 0:
+
+Теперь x — это массив NumPy, содержащий 4 значения.
+Мы можем получить доступ к его элементам, используя их индексы, которые начинаются с 0:
+
+	print(x[0]) # Output is 1
+
+> Hint: NumPy arrays are homogeneous, meaning they can contain only a single data type, while lists can contain multiple different types of data.
+
+> Подсказка. Массивы NumPy однородны, то есть могут содержать данные только одного типа, тогда как списки могут содержать несколько разных типов данных.
