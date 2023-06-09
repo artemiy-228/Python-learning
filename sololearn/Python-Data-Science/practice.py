@@ -1,6 +1,6 @@
 # Data Science - Introduction
 
-# ##Statistic
+# #Statistic
 
 # ##Vactination report - mean
 
@@ -30,6 +30,4 @@ for i in vac_nums:
 variance = sum / len(vac_nums)
 
 print(variance)
-
-
 
