@@ -522,3 +522,81 @@ They are marked with the staticmethod decorator.
 
 > Hint: Static methods behave like plain functions, except for the fact that you can call them from an instance of the class.
 
+> Подсказка: Статические методы ведут себя как обычные функции, за исключением того факта, что их можно вызывать из экземпляра класса.
+
+***
+
+## Properties 
+
+### Properties 
+
+Properties provide a way of customizing access to instance attributes. 
+
+They are created by putting the property decorator above a method, which means when the instance attribute with the same name as the method is accessed, the method will be called instead. 
+
+One common use of a property is to make an attribute read-only.
+
+Свойства предоставляют способ настройки доступа к атрибутам экземпляра.
+
+Они создаются путем размещения декоратора свойства над методом, что означает, что при доступе к атрибуту экземпляра с тем же именем, что и у метода, вместо этого будет вызываться метод.
+
+Одно из распространенных применений свойства — сделать атрибут доступным только для чтения.
+
+    class Pizza:
+      def __init__(self, toppings):
+        self.toppings = toppings
+        
+      @property
+      def pineapple_allowed(self):
+        return False
+        
+    pizza = Pizza(["cheese", "tomato"])
+    print(pizza.pineapple_allowed)
+    pizza.pineapple_allowed = True
+
+### Properties 
+
+
+Properties can also be set by defining setter/getter functions.
+
+The setter function sets the corresponding property's value.
+
+The getter gets the value.
+
+To define a setter, you need to use a decorator of the same name as the property, followed by a dot and the setter keyword.
+
+The same applies to defining getter functions.
+
+Свойства также можно установить, определив функции установки/получения.
+
+Функция setter устанавливает значение соответствующего свойства.
+
+Геттер получает значение.
+
+Чтобы определить сеттер, вам нужно использовать декоратор с тем же именем, что и свойство, за которым следует точка и ключевое слово сеттера.
+
+То же самое относится к определению функций получения
+
+    class Pizza:
+      def __init__(self, toppings):
+        self.toppings = toppings
+        self._pineapple_allowed = False
+        
+      @property
+      def pineapple_allowed(self):
+        return self._pineapple_allowed
+        
+      @pineapple_allowed.setter
+      def pineapple_allowed(self, value):
+        if value:
+          password = input("Enter the password: ")
+          if password == "Sw0rdf1sh!":
+            self._pineapple_allowed = value
+          else:
+            raise ValueError("Alert! Intruder!")
+            
+    pizza = Pizza(["cheese", "tomato"])
+    print(pizza.pineapple_allowed)
+    pizza.pineapple_allowed = True
+    print(pizza.pineapple_allowed)
+
