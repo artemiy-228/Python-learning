@@ -360,3 +360,95 @@ The indexing function also returns a random item in a range from the list, based
 > Подсказка: Мы переопределили функцию len() для класса VagueList, чтобы она возвращала случайное число.
 Функция индексирования также возвращает случайный элемент в диапазоне из списка на основе выражения.
 
+*** 
+
+## Data Hiding
+
+### Data Hiding 
+
+
+A key part of object-oriented programming is encapsulation, which involves packaging of related variables and functions into a single easy-to-use object -- an instance of a class.
+
+A related concept is data hiding, which states that implementation details of a class should be hidden, and a clean standard interface be presented for those who want to use the class. 
+
+In other programming languages, this is usually done with private methods and attributes, which block external access to certain methods and attributes in a class.
+
+The Python philosophy is slightly different. It is often stated as "we are all consenting adults here", meaning that you shouldn't put arbitrary restrictions on accessing parts of a class. Hence there are no ways of enforcing that a method or attribute be strictly private. 
+
+Ключевой частью объектно-ориентированного программирования является инкапсуляция, которая включает упаковку связанных переменных и функций в один простой в использовании объект — экземпляр класса.
+
+Родственная концепция — скрытие данных, в которой говорится, что детали реализации класса должны быть скрыты, а для тех, кто хочет использовать класс, должен быть представлен чистый стандартный интерфейс.
+
+В других языках программирования это обычно делается с помощью закрытых методов и атрибутов, которые блокируют внешний доступ к определенным методам и атрибутам в классе.
+
+Философия Python немного отличается. Часто говорится, что «мы все здесь взрослые по обоюдному согласию», что означает, что вы не должны произвольно ограничивать доступ к частям класса. Следовательно, нет способов обеспечить, чтобы метод или атрибут были строго закрытыми.
+
+> Hint: However, there are ways to discourage people from accessing parts of a class, such as by denoting that it is an implementation detail, and should be used at their own risk.
+
+> Подсказка. Тем не менее, есть способы отговорить людей от доступа к частям класса, например, обозначив, что это деталь реализации, которую следует использовать на свой страх и риск.
+
+### Data Hiding 
+
+Weakly private methods and attributes have a single underscore at the beginning.
+
+This signals that they are private, and shouldn't be used by external code. However, it is mostly only a convention, and does not stop external code from accessing them.
+
+Слабо приватные методы и атрибуты имеют один подчеркивание в начале.
+
+Это сигнализирует о том, что они являются частными и не должны использоваться внешним кодом. Однако в основном это всего лишь соглашение, которое не препятствует доступу к ним внешнего кода.
+
+    class Queue:
+      def __init__(self, contents):
+          self._hiddenlist = list(contents)
+        
+      def push(self, value):
+          self._hiddenlist.insert(0, value)
+         
+      def pop(self):
+          return self._hiddenlist.pop(-1)
+        
+      def __repr__(self):
+          return "Queue({})".format(self._hiddenlist)
+          
+    queue = Queue([1, 2, 3])
+    print(queue)
+    queue.push(0)
+    print(queue)
+    queue.pop()
+	print(queue)
+	print(queue._hiddenlist)
+
+> Hint: 
+In the code above, the attribute _hiddenlist is marked as private, but it can still be accessed in the outside code.
+The __repr__ magic method is used for string representation of the instance.
+
+> Hint: В приведенном выше коде атрибут _hiddenlist помечен как приватный, но к нему по-прежнему можно получить доступ во внешнем коде.
+Магический метод __repr__ используется для строкового представления экземпляра.
+
+### Data Hiding 
+
+Strongly private methods and attributes have a double underscore at the beginning of their names. This causes their names to be mangled, which means that they can't be accessed from outside the class. 
+
+The purpose of this isn't to ensure that they are kept private, but to avoid bugs if there are subclasses that have methods or attributes with the same names.
+
+Name mangled methods can still be accessed externally, but by a different name. The method __privatemethod of class Spam could be accessed externally with _Spam__privatemethod.
+
+Строгие частные методы и атрибуты имеют двойное подчеркивание в начале своего имени. Это приводит к тому, что их имена искажаются, а это означает, что к ним нельзя получить доступ извне класса.
+
+Цель этого не в том, чтобы гарантировать их приватность, а во избежание ошибок, если есть подклассы, которые имеют методы или атрибуты с теми же именами.
+
+Доступ к методам с измененным именем по-прежнему можно получить извне, но под другим именем. К методу __privatemethod класса Spam можно было получить доступ извне с помощью _Spam__privatemethod.
+
+    class Spam:
+      __egg = 7
+      def print_egg(self):
+        print(self.__egg)
+        
+	s = Spam()
+	s.print_egg()
+	print(s._Spam__egg)
+	print(s.__egg)
+
+> Hint: Basically, Python protects those members by internally changing the name to include the class name.
+
+> Подсказка. По сути, Python защищает эти члены, внутренне изменяя имя, чтобы оно включало имя класса.
