@@ -452,3 +452,73 @@ Name mangled methods can still be accessed externally, but by a different name. 
 > Hint: Basically, Python protects those members by internally changing the name to include the class name.
 
 > Подсказка. По сути, Python защищает эти члены, внутренне изменяя имя, чтобы оно включало имя класса.
+
+***
+
+## Class Methods 
+
+### Class Methods
+
+Methods of objects we've looked at so far are called by an instance of a class, which is then passed to the self parameter of the method.
+
+Class methods are different -- they are called by a class, which is passed to the cls parameter of the method. 
+
+A common use of these are factory methods, which instantiate an instance of a class, using different parameters than those usually passed to the class constructor. 
+
+Class methods are marked with a classmethod decorator.
+
+Методы объектов, которые мы рассмотрели до сих пор, вызываются экземпляром класса, который затем передается параметру self метода.
+
+Методы класса разные — они вызываются классом, который передается в параметр cls метода.
+
+Обычно они используются в фабричных методах, которые создают экземпляр класса с использованием параметров, отличных от тех, которые обычно передаются конструктору класса.
+
+Методы класса помечаются декоратором classmethod.
+
+    class Rectangle:
+      def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        
+      def calculate_area(self):
+        return self.width * self.height
+        
+      @classmethod
+      def new_square(cls, side_length):
+        return cls(side_length, side_length)
+    square = Rectangle.new_square(5)
+    print(square.calculate_area())
+
+new_square is a class method and is called on the class, rather than on an instance of the class. It returns a new object of the class cls.
+
+new_square — это метод класса, который вызывается в классе, а не в экземпляре класса. Он возвращает новый объект класса cls.
+
+> Hint: Technically, the parameters self and cls are just conventions; they could be changed to anything else. However, they are universally followed, so it is wise to stick to using them.
+
+> Подсказка: Технически параметры self и cls — это просто соглашения; их можно поменять на что угодно. Тем не менее, им следуют повсеместно, поэтому разумно придерживаться их
+
+### Static Methods
+
+Static methods are similar to class methods, except they don't receive any additional arguments; they are identical to normal functions that belong to a class. 
+They are marked with the staticmethod decorator.
+
+Статические методы аналогичны методам класса, за исключением того, что они не получают никаких дополнительных аргументов; они идентичны обычным функциям, принадлежащим классу.
+Они отмечены декоратором staticmethod.
+
+    class Pizza:
+      def __init__(self, toppings):
+        self.toppings = toppings
+        
+      @staticmethod
+      def validate_topping(topping):
+        if topping == "pineapple":
+          raise ValueError("No pineapples!")
+        else:
+          return True
+          
+    ingredients = ["cheese", "onions", "spam"]
+    if all(Pizza.validate_topping(i) for i in ingredients):
+      pizza = Pizza(ingredients) 
+
+> Hint: Static methods behave like plain functions, except for the fact that you can call them from an instance of the class.
+
