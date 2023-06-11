@@ -468,3 +468,83 @@ For example, the following DataFrame is made of two Series, ages and heights
 > Hint: You can think of a Series as a one-dimensional array, while a DataFrame is a multi-dimensional array.
 
 > Подсказка: вы можете думать о Series как об одномерном массиве, а DataFrame — как о многомерном массиве.
+
+***
+
+## Creating DataFrames
+
+### DataFrames
+
+Before working with real data, let's first create a DataFrame manually to explore its functions.
+The easiest way to create a DataFrame is using a dictionary:
+
+Прежде чем работать с реальными данными, давайте сначала создадим DataFrame вручную, чтобы изучить его функции.
+Самый простой способ создать DataFrame — использовать словарь:
+
+	data = {
+	   'ages': [14, 18, 24, 42],
+	   'heights': [165, 180, 176, 184]
+	}
+
+Each key is a column, while the value is an array representing the data for that column.
+
+Now, we can pass this dictionary to the DataFrame constructor:
+
+Каждый ключ — это столбец, а значение — это массив, представляющий данные для этого столбца.
+
+Теперь мы можем передать этот словарь в конструктор DataFrame:
+
+import pandas as pd
+
+	data = {
+	   'ages': [14, 18, 24, 42],
+	   'heights': [165, 180, 176, 184]
+	}
+	
+	df = pd.DataFrame(data)
+	print(df)
+
+### DataFrames 
+
+The DataFrame automatically creates a numeric index for each row.
+We can specify a custom index, when creating the DataFrame:
+
+DataFrame автоматически создает числовой индекс для каждой строки.
+Мы можем указать собственный индекс при создании DataFrame:
+
+	import pandas as pd
+
+	data = {
+	   'ages': [14, 18, 24, 42],
+	   'heights': [165, 180, 176, 184]
+	}
+	
+	df = pd.DataFrame(data, index=['James', 'Bob', 'Amy', 'Dave'])
+	print(df)
+
+Now we can access a row using its index and the loc[] function:
+
+Теперь мы можем получить доступ к строке, используя ее индекс и функцию loc[]:
+
+	import pandas as pd
+	
+	data = {
+	   'ages': [14, 18, 24, 42],
+	   'heights': [165, 180, 176, 184]
+	}
+	
+	df = pd.DataFrame(data, index=['James', 'Bob', 'Amy', 'Dave'])
+	print(df.loc["Bob"])
+
+This will output the row that corresponds to the index "Bob".
+
+Это выведет строку, соответствующую индексу «Bob».
+
+> Hint: Note, that loc uses square brackets to specify the index.
+
+> Подсказка: обратите внимание, что loc использует квадратные скобки для указания индекса.
+
+
+
+
+
