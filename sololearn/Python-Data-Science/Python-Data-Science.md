@@ -544,7 +544,105 @@ This will output the row that corresponds to the index "Bob".
 
 > Подсказка: обратите внимание, что loc использует квадратные скобки для указания индекса.
 
+***
 
+## Indexing & Slicing
 
+### Indexing
 
+We can select a single column by specifying its name in square brackets:
 
+Мы можем выбрать один столбец, указав его имя в квадратных скобках:
+
+	import pandas as pd
+
+	data = {
+   	'ages': [14, 18, 24, 42],
+ 	  'heights': [165, 180, 176, 184]
+	}
+	
+	df = pd.DataFrame(data, index=['James', 'Bob', 'Amy', 'Dave'])
+	
+	print(df["ages"])
+
+The result is a Series object.
+
+If we want to select multiple columns, we can specify a list of column names:
+
+Результатом является объект Series.
+
+Если мы хотим выбрать несколько столбцов, мы можем указать список имен столбцов:
+
+	import pandas as pd
+
+	data = {
+ 	  'ages': [14, 18, 24, 42],
+ 	  'heights': [165, 180, 176, 184]
+	}
+
+	df = pd.DataFrame(data, index=['James', 'Bob', 'Amy', 'Dave'])
+
+	print(df[["ages", "heights"]])
+
+This time, the result is a DataFrame, as it includes multiple columns.
+
+На этот раз результатом является DataFrame, так как он включает в себя несколько столбцов.
+
+> Hint: This is useful, when we need to select only a part of the columns from the dataset.
+
+> Подсказка: это полезно, когда нам нужно выбрать только часть столбцов из набора данных.
+
+### Slicing
+
+Pandas uses the iloc function to select data based on its numeric index.
+It works the same way indexing lists does in Python.
+
+Pandas использует функцию iloc для выбора данных на основе их числового индекса.
+Он работает так же, как списки индексации в Python.
+
+	import pandas as pd
+	
+	data = {
+ 	  'ages': [14, 18, 24, 42],
+ 	  'heights': [165, 180, 176, 184]
+	}
+
+	df = pd.DataFrame(data, index=['James', 'Bob', 'Amy', 'Dave'])
+
+	# third row
+	print(df.iloc[2])
+	
+	#first 3 rows
+	print(df.iloc[:3])
+	
+	# rows 2 to 3
+	print(df.iloc[1:3])
+
+> Hint: iloc follows the same rules as slicing does with Python lists.
+
+> Подсказка: iloc следует тем же правилам, что и срезы в списках Python.
+
+### Conditions
+
+We can also select the data based on a condition.
+For example, let's select all rows where age is greater than 18 and height is greater than 180:
+
+Мы также можем выбирать данные на основе условия.
+Например, выберем все строки, где возраст больше 18, а рост больше 180:
+
+	import pandas as pd
+		
+	data = {
+ 	  'ages': [14, 18, 24, 42],
+ 	  'heights': [165, 180, 176, 184]
+	}
+		
+	df = pd.DataFrame(data, index=['James', 'Bob', 'Amy', 'Dave'])
+		
+	print(df[(df['ages']>18) & (df['heights']>180)])
+
+> Hint: Similarly, the or | operator can be used to combine conditions.
+
+> Подсказка: аналогично или | Оператор может использоваться для объединения условий.
+
+	
