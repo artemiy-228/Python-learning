@@ -300,3 +300,53 @@ The result is a flat array that contains 6 elements.
 > Hint: The same result can be achieved using the flatten() function.
 > Подсказка: Того же результата можно добиться с помощью функции flatten().
 
+## Indexing and Slicing
+
+### Indexing and Slicing
+
+NumPy arrays can be indexed and sliced the same way that Python lists are.
+
+Массивы NumPy можно индексировать и нарезать так же, как списки Python.
+
+	import numpy as np
+		
+	x = np.arange(1, 10)
+		
+	print(x[0:2])
+	print(x[5:])
+	print(x[:2])
+	print(x[-3:])
+
+> Hint: Negative indexes count from the end of the array, so, [-3:] will result in the last 3 elements.
+
+> Подсказка: Отрицательные индексы считаются с конца массива, поэтому [-3:] приведет к последним 3 элементам.
+
+### Conditions
+
+
+You can provide a condition as the index to select the elements that fulfill the given condition.
+
+For example, let's select the elements that are less than 4:
+
+Вы можете указать условие в качестве индекса для выбора элементов, которые удовлетворяют заданному условию.
+
+Например, давайте выберем элементы меньше 4:
+
+	import numpy as np
+	
+	x = np.arange(1, 10)
+	
+	print(x[x<4])
+
+Conditions can be combined using the & (and) and | (or) operators.
+For example, let's take the even numbers that are greater than 5:
+
+Условия можно комбинировать с помощью знаков & (и) и | (или) операторы.
+Например, возьмем четные числа больше 5:
+
+> Hint: The condition can also be assigned to a variable, which will be an array of boolean values showing whether or not the values in the array fulfill the condition:
+y = (x>5) & (x%2==0)
+
+> Подсказка: Условие также может быть присвоено переменной, которая будет массивом логических значений, показывающих, удовлетворяют ли значения в массиве условию:
+у = (х> 5) и (х% 2 == 0)
+
