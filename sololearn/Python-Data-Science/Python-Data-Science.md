@@ -350,3 +350,121 @@ y = (x>5) & (x%2==0)
 > Подсказка: Условие также может быть присвоено переменной, которая будет массивом логических значений, показывающих, удовлетворяют ли значения в массиве условию:
 у = (х> 5) и (х% 2 == 0)
 
+***
+
+## Array Operations
+
+### Operations
+
+It is easy to perform basic mathematical operations with arrays.
+For example, to find the sum of all elements, we use the sum() function:
+
+С массивами легко выполнять основные математические операции.
+Например, чтобы найти сумму всех элементов, мы используем функцию sum():
+
+	import numpy as np
+
+	x = np.arange(1, 10)
+
+	print(x.sum())
+
+Similarly, min() and max() can be used to get the smallest and largest elements.
+
+We can also perform operations between the array and a single number.
+For example, we can multiply all elements by 2:
+
+Точно так же min() и max() можно использовать для получения наименьшего и наибольшего элементов.
+
+Мы также можем выполнять операции между массивом и одним числом.
+Например, мы можем умножить все элементы на 2:
+
+	import numpy as np
+
+	x = np.arange(1, 10)
+	y = x*2
+
+	print(y)	
+
+As simple as that! Take your array and perform any operation you want with it!
+
+Так просто! Возьмите свой массив и выполните с ним любую операцию, которую хотите!
+
+> Hint: NumPy understands that the given operation should be performed with each element. This is called broadcasting.
+
+> Подсказка: NumPy понимает, что данная операция должна выполняться с каждым элементом. Это называется трансляция.
+
+
+### Statistics
+
+Remember the summary statistics we learned in the previous module? Those included **mean, median, variance** and **standard deviation**.
+
+NumPy arrays have built-in functions to return those values.
+
+Помните сводную статистику, которую мы изучили в предыдущем модуле? К ним относятся **среднее значение, медиана, дисперсия** и **стандартное отклонение**.
+
+Массивы NumPy имеют встроенные функции для возврата этих значений.
+
+	import numpy as np
+
+	x = np.array([14, 18, 19, 24, 26, 33, 42, 55, 67])
+	
+	print(np.mean(x))
+	print(np.median(x))
+	print(np.var(x))
+	print(np.std(x))
+
+
+> Hint: As you can see, NumPy provides many useful functions to perform common operations with arrays.
+
+> Подсказка: как видите, NumPy предоставляет множество полезных функций для выполнения обычных операций с массивами.	
+
+***
+
+# Data Manipulation with Pandas
+
+## What is Pandas?
+
+### What is Pandas?
+
+Pandas is one of the most popular data science libraries in Python. Easy to use, it is built on top of NumPy and shares many functions and properties.
+
+With Pandas, you can read and extract data from files, transform and analyze it, calculate statistics and correlations, and much more!
+
+To start using pandas, we need to import it first:
+
+Pandas — одна из самых популярных библиотек для обработки данных в Python. Простой в использовании, он построен на основе NumPy и имеет много общих функций и свойств.
+
+С Pandas вы можете читать и извлекать данные из файлов, преобразовывать и анализировать их, рассчитывать статистику и корреляции и многое другое!
+
+Чтобы начать использовать pandas, нам нужно сначала импортировать его:
+
+	import pandas as pd 
+
+pd is a common short name used when importing the library.
+
+pd — это обычное короткое имя, используемое при импорте библиотеки.
+
+> Hint: Pandas is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
+
+> Подсказка: Pandas происходит от термина «панельные данные», в термине эконометрики для наборов данных, которые включают наблюдения за несколькими периодами времени для одних и тех же людей.
+
+### Series & DataFrames
+
+
+The two primary components of pandas are the Series and the DataFrame.
+
+A Series is essentially a column, and a DataFrame is a multi-dimensional table made up of a collection of Series.
+
+For example, the following DataFrame is made of two Series, ages and heights
+
+Двумя основными компонентами pandas являются Series и DataFrame.
+
+Серия — это, по сути, столбец, а DataFrame — это многомерная таблица, состоящая из набора серий.
+
+Например, следующий DataFrame состоит из двух серий, возраста и роста.
+
+![Example](https://api.sololearn.com/DownloadFile?id=4554)
+
+> Hint: You can think of a Series as a one-dimensional array, while a DataFrame is a multi-dimensional array.
+
+> Подсказка: вы можете думать о Series как об одномерном массиве, а DataFrame — как о многомерном массиве.
